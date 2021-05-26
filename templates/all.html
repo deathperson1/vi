@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        all countries
+    </h1>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>
+                Capital
+            </th>
+            <th>borders</th>
+            <th>population</th>
+            <th>Flag</th>
+        </tr>x
+
+        </thead>
+        <tbody>
+            {%for i in con %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.capital}}</td>
+                <td>
+
+                    <ol>
+                        {%for j in i.borders %}
+                        <li>{{j}}</li>
+                        {%endfor%}
+                    </ol>
+                </td>
+                <td>
+                    {{i.population}}
+                </td>
+                <td>{{i.borders}}</td>
+                <td>
+                    <img src="{{i.flag}}" alt="" height="100px">
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+
+    </table>
+</body>
+</html>
